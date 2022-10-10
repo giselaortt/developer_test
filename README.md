@@ -17,20 +17,44 @@ Caso tenha alguma dúvida fique a vontade para pesquisar na internet sobre.
 ## Parte 1 (3 partes) - _Git, Todo mundo junto_
 _Esta etapa irá nos apresentar os seus conhecimentos de Git._
 * Dê um fork deste projeto
+
 * Crie uma branch dentro do seu fork com o seu email como nome. 
+```
+git branch ms.giselaortt@gmail.com
+git checkout ms.giselaortt@gmail.com
+```
+
 * Para os próximos passos, gostaríamos que você efetuasse os pushs conforme sua evolução.
 
 Utilize commits que pontuem o está sendo carregado para o repositório, pois depois de você outras pessoas poderão utilizar o mesmo repositório/branch para dar continuidade ao seu trabalho.
 
 
-
 ## Parte 2 (3 Partes) - _Welcome to the Django_
 _Esta etapa irá mostrar os seus conhecimentos de Django._
 * Dentro do diretório deste projeto, inicialize um projeto Django, com o nome de "take5"
+```
+django-admin startproject take5 
+```
+
 * Rode as migrações do seu projeto para inicializar as tabelas do django
+```
+python3 manage.py makemigrations
+python3 manage.py migrate
+```
+
 * Inicie o servidor e verifique se sua aplicação está funcionando
+```
+python3 manage.py runserver
+```
+
 * Dentro do projeto, inicialize uma aplicação chamada "survey"
+```
+python3 manage.py startapp survey
+```
+
 * Inclua survey no projeto take5
+> write app name to settings.py on INSTALLED_APPS
+
 * Crie modelos para sua aplicação: 
   - Survey (Pesquisa)
   - SurveyQuestion (Perguntas da pesquisa)
