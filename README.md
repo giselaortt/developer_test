@@ -48,6 +48,8 @@ python3 manage.py runserver
 ```
 
 * Dentro do projeto, inicialize uma aplicação chamada "survey"
+
+rodar o seguinte comando dentro do diretorio take5:
 ```
 python3 manage.py startapp survey
 ```
@@ -66,6 +68,25 @@ python3 manage.py startapp survey
 Opções para cadastrar a pesquisa:
 1. Criar uma pesquisa utilizando o Painel do Django
 2. Criar uma pesquisa utilizando o Shell (_Caso opte por esta opção é necessário inserir os comandos utilizados no arquivo shell.py localizado neste projeto_)
+
+para abrir a shell do django:
+```
+python manage.py shell
+```
+
+exemplo  de como inserir uma entrada no banco:
+```
+ from mysite.blog.models import Blog
+ b = Blog(name='Beatles Blog', tagline='All the latest Beatles news.')
+ b.save()
+```
+
+retirado (daqui)[https://django-portuguese.readthedocs.io/en/1.0/topics/db/queries.html].
+Ou apos instanciar a classe: 
+
+```
+b.name = 'Beatles Blog'
+```
 
 ## Parte 3 (3 Partes) - _Show me the money_
 _Esta etapa irá mostrar os seus conhecimentos de Django Rest Framework._
