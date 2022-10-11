@@ -76,9 +76,9 @@ python manage.py shell
 
 exemplo  de como inserir uma entrada no banco:
 ```
- from mysite.blog.models import Blog
- b = Blog(name='Beatles Blog', tagline='All the latest Beatles news.')
- b.save()
+from mysite.blog.models import Blog
+b = Blog(name='Beatles Blog', tagline='All the latest Beatles news.')
+b.save()
 ```
 
 retirado (daqui)[https://django-portuguese.readthedocs.io/en/1.0/topics/db/queries.html].
