@@ -91,8 +91,15 @@ b.name = 'Beatles Blog'
 ## Parte 3 (3 Partes) - _Show me the money_
 _Esta etapa irá mostrar os seus conhecimentos de Django Rest Framework._
 * Instale o Django Rest Framework no projeto, utilizando o PIP e incluindo ele no seu settings.py
+``` pip install djangorestframework ```
+then insert 'rest_framework' on installed apps.
+
 * Crie uma view para apresentar suas pesquisas, associando ela a uma URL do seu projeto
+
+
 * Crie um serializer para pegar Survey, SurveyQuestion e SurveyQuestionAlternative. Tente utilizar o prefetch_related nas queries para diminuir a quantidade de queryes necessárias para a apresentação dos dados
+
+
 * Acesse a página da sua pesquisa e copie o JSON de resultado para o arquivo result.json situado no diretório raiz deste projeto
 
 # Boa Sorte

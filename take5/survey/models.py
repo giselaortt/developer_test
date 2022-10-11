@@ -4,8 +4,9 @@ from django.db import models
 class Survey( models.Model ):
 	#NUMBER_OF_QUESTIONS = 10
 	LENGTH_SURVEY_NAME = 100
-	survey_name = models.CharField(max_length=LENGTH_SURVEY_NAME)
-	survey_id = models.IntegerField()
+	name = models.CharField(max_length=LENGTH_SURVEY_NAME)
+	#survey_id = models.IntegerField()
+
     def __str__(self):
 
         pass
@@ -14,6 +15,7 @@ class Survey( models.Model ):
 class SurveyQuestion( models.Model ):
 	LENGTH_QUESTION = 140
 	question_text = models.CharField(max_length=LENGTH_QUESTION)
+    #many to many or foreignt key? eis a questao.
     survey = models.ManyToManyField( Survey )
 
     def __str__(self):
@@ -24,7 +26,7 @@ class SurveyQuestion( models.Model ):
 class SurveyQuestionAlternative( models.Model ):
 	LENGTH_ALTERNATIVE = 100
 	#question_id = models.IntegerField()
-	alternative_text = models.CharField(max_length=LENGTH_ALTERNATIVE)	
+	text = models.CharField(max_length=LENGTH_ALTERNATIVE)	
     question = models.ForeingKey( SurveyQuestion )
 
     def __str__(self):
