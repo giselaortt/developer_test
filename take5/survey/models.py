@@ -16,7 +16,7 @@ class SurveyQuestion( models.Model ):
     question_text = models.CharField(max_length=LENGTH_QUESTION)
     #many to many or foreignt key? eis a questao.
     #survey = models.ManyToManyField( Survey )
-    survey = models.ForeignKey( Survey, on_delete = models.CASCADE )
+    survey = models.ForeingKey( Survey, on_delete = models.CASCADE )
     def __str__(self):
         return self.question_text
 
@@ -35,7 +35,7 @@ class SurveyUserAnswer( models.Model ):
     user_name = models.CharField( MAX_NAME_LENGTH )
     user_cpf = models.CharField( 11 )
     survey = models.ForeingKey( Survey )
-    answers =  models.ForeignKey( SurveyQuestionAlternative, on_delete = models.CASCADE ) 
+    answers =  models.ForeingKey( SurveyQuestionAlternative, on_delete = models.CASCADE ) 
     #survey_id = models.IntegerField()
     #def __str__(self):
     #    return self.user_name
