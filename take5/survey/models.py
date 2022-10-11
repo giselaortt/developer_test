@@ -32,9 +32,9 @@ class SurveyQuestionAlternative( models.Model ):
 
 class SurveyUserAnswer( models.Model ):
     MAX_NAME_LENGTH = 50
-    user_name = models.CharField( MAX_NAME_LENGTH )
-    user_cpf = models.CharField( 11 )
-    survey = models.ForeignKey( Survey )
+    user_name = models.CharField( max_length = MAX_NAME_LENGTH )
+    user_cpf = models.CharField( max_length = 11 )
+    survey = models.ForeignKey( Survey, on_delete = models.CASCADE )
     answers =  models.ForeignKey( SurveyQuestionAlternative, on_delete = models.CASCADE ) 
     #survey_id = models.IntegerField()
     #def __str__(self):
