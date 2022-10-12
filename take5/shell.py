@@ -1,4 +1,5 @@
-from take5.survey.models import Survey, SurveyQuestion, SurveyQuestionAlternative, SurveyUserAnswer
+#from take5.survey.models import Survey, SurveyQuestion, SurveyQuestionAlternative, SurveyUserAnswer
+from survey.models import Survey
 
 
 test_survey = Survey( name = "1 2 3 testando..." )
@@ -7,13 +8,14 @@ q_1_a_1 = SurveyQuestionAlternative( question = question_1, text = "Suco de couv
 q_1_a_2 = SurveyQuestionAlternative( question = question_1, text = "Pao com presunto" ) 
 q_1_a_3 = SurveyQuestionAlternative( question = question_1, text = "Cuscus" ) 
 q_1_a_4 = SurveyQuestionAlternative( question = question_1, text = "Eu nao como de manha pq faco jejum." ) 
-q_1_a_4 = SurveyQuestionAlternative( question = question_1, text = "Eu nao como de manha pq acordo meio dia." ) 
+q_1_a_5 = SurveyQuestionAlternative( question = question_1, text = "Eu nao como de manha pq acordo meio dia." ) 
 test_survey.save()
 question_1.save()
 q_1_a_1.save()
 q_1_a_2.save()
 q_1_a_3.save()
 q_1_a_4.save()
+q_1_a_5.save()
 
 question_2 = SurveyQuestion( survey = test_survey, question_text = "Qual a sua cor favorita ?" )
 q_2_a_1 = SurveyQuestionAlternative( question = question_2, text = "Azul" ) 
@@ -27,6 +29,8 @@ q_2_a_1.save()
 q_2_a_2.save()
 q_2_a_3.save()
 q_2_a_4.save()
+q_2_a_5.save()
+q_2_a_6.save()
 
 question_3 = SurveyQuestion( survey = test_survey, question_text = "Lula ou Bolsonaro ? cuidado com a resposta." )
 q_3_a_1 = SurveyQuestionAlternative( question = question_3, text = "Lula" ) 
