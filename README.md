@@ -107,5 +107,16 @@ then insert 'rest_framework' on installed apps.
 Qualquer dúvida entrar em contato com Alexandre Sanches (alexandre@take5.com.br)
 
 
+> How to local deploy :
+
+Command to know my ip address:``` hostname -I ```
+
+add  ``` ALLOWED_HOSTS =[ 'localhost','my_ip_here' ] ``` on ``` settings.py ``` 
+
+add the paths to the urls.py file, linking each path to a view.
+
+deploy locally with
+
+``` python manage.py runserver localhost:8080 ``` and access ``` localhost:8080 ``` from the browser.
 
 
