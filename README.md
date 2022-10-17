@@ -72,8 +72,8 @@ Opções para cadastrar a pesquisa:
 para abrir a shell do django:
 ```
 python manage.py shell
-```
 
+```
 exemplo  de como inserir uma entrada no banco:
 ```
 from mysite.blog.models import Blog

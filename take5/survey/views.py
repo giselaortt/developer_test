@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import SurveyQuestionAlternative, SurveyQuestion, Survey, SurveyUserAnswer
 from .serializers import *
+import json
 
 
 def test( request ):
@@ -24,8 +25,8 @@ def SurveyView( request ):
     alternative_serializer = AlternativeSerializer( alternatives, many = True )
     question_serializer = SurveyQuestionSerializer( questions, many = True )
 
-    return HttpResponse(serializer.data + question_serializer.data
-                    + alternative_serializer.data)
+    return HttpResponse( json.dumps( serializer.data + question_serializer.data
+                    + alternative_serializer.data ))
 
 
 '''
