@@ -107,7 +107,7 @@ then insert 'rest_framework' on installed apps.
 Qualquer dúvida entrar em contato com Alexandre Sanches (alexandre@take5.com.br)
 
 
-> How to local deploy :
+# How to local deploy :
 
 Command to know my ip address:``` hostname -I ```
 
@@ -118,5 +118,16 @@ add the paths to the urls.py file, linking each path to a view.
 deploy locally with
 
 ``` python manage.py runserver localhost:8080 ``` and access ``` localhost:8080 ``` from the browser.
+
+# Questions:
+
+## What is Prefetch related and when is it usefull ?
+
+
+## How to save the user answer to the database ?
+
+
+## How to recover a specific survey instead of all of them, and suposing we have multiple surveys, how to link only the questions related to the chosen survey ?
+
 
 
