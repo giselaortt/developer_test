@@ -18,15 +18,20 @@ def SurveyView( request ):
     survey = Survey.objects.all()
     questions = SurveyQuestion.objects.all()
     alternatives = SurveyQuestionAlternative.objects.all()
-    serializer = SurveySerializer( survey, many= True )
-    print(serializer.data)
 
-    return HttpResponse(serializer.data)
+    #Sera que survey precisa de serializer ? a ideia eh que haja apenas 1 survey, nao eh ?
+    serializer = SurveySerializer( survey, many= True )
+    alternative_serializer = AlternativeSerializer( alternatives, many = True )
+    question_serializer = SurveyQuestionSerializer( questions, many = True )
+
+    return HttpResponse(serializer.data + question_serializer.data
+                    + alternative_serializer.data)
 
 
 '''
 class SurveyQuestionAlternativeView():
     pass
+
 
 
 class SurveyQuestionView():

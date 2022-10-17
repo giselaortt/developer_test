@@ -18,7 +18,7 @@ from django.urls import include, path
 from survey import views
 
 urlpatterns = [
-    #path('admin/', admin.site.urls),
-    path('', views.index, name='home'),
+    path('', views.SurveyView, name='home'),
+    path('index', views.index, name='index'),
     path('test', views.test, name = '123testing'),
 ]
