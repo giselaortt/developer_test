@@ -6,8 +6,16 @@ import json
 
 
 def test( request ):
+    survey = Survey.objects.all()
+    questions = SurveyQuestion.objects.all()
+    alternatives = SurveyQuestionAlternative.objects.all()
+    #Sera que survey precisa de serializer ? a ideia eh que haja apenas 1 survey, nao eh ?
+    serializer = SurveySerializer( survey, many= True )
+    alternative_serializer = AlternativeSerializer( alternatives, many = True )
+    question_serializer = SurveyQuestionSerializer( questions, many = True )
+    data = serializer.data + question_serializer.data + alternative_serializer.data
 
-    return render(request, "home.html")
+    return HttpResponse( json.loads(json.dumps(serializer.data) ))
 
 
 def index( request ) :
@@ -25,8 +33,9 @@ def SurveyView( request ):
     alternative_serializer = AlternativeSerializer( alternatives, many = True )
     question_serializer = SurveyQuestionSerializer( questions, many = True )
 
-    return HttpResponse( json.dumps( serializer.data + question_serializer.data
-                    + alternative_serializer.data ) )
+    data = serializer.data + question_serializer.data + alternative_serializer.data
+    data = dict( serializer.data )
+    return render( request, "home.html", data )
 
 
 '''
@@ -37,7 +46,6 @@ class SurveyQuestionAlternativeView():
 
 class SurveyQuestionView():
     pass
-
 
 
 class SurveyUserAnswerView():
