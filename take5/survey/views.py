@@ -7,12 +7,12 @@ import json
 
 def test( request ):
 
-    return HttpResponse('hallo world welcome to my page')
+    return render(request, "home.html")
 
 
 def index( request ) :
 
-    return HttpResponse('imagine here a creative wonderful index test')
+    return HttpResponse('imagine here a creative wonderful index test page iiuuppiii')
 
 
 def SurveyView( request ):
@@ -26,7 +26,7 @@ def SurveyView( request ):
     question_serializer = SurveyQuestionSerializer( questions, many = True )
 
     return HttpResponse( json.dumps( serializer.data + question_serializer.data
-                    + alternative_serializer.data ))
+                    + alternative_serializer.data ) )
 
 
 '''
