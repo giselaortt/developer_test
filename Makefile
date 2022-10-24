@@ -1,8 +1,8 @@
 
 migrate:
-	python manage.py makemigrations
-	python manage.py migrate
+	python take5/manage.py makemigrations
+	python take5/manage.py migrate
 
 
 deploy:
-	python manage.py runserver localhost:8080
+	python take5/manage.py runserver localhost:8080
